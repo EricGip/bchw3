@@ -4,7 +4,7 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 // intializing variables to hold the number of wins, losses, guesses, and previous guesses
 var wins = 0;
 var losses = 0;
-var guessesLeft = 0;
+var guessesLeft = 10;
     //logging current guesses, I believe our two best options we can choose an array or hashmap
     //going to choose an array since we're going to limit guesses and don't need to overcomplicate things.
 var prevGuess = [];
@@ -34,12 +34,17 @@ document.onkeyup = function(event) {
             wins++;
             alert("nice, you guessed correctly!")
             document.getElementById("displayWins").innerHTML = wins
-            //add a reset function here.
+            document.getElementById("displayLosses").innerHTML = losses
+
+            //reset
         }
         //else, subtract guesses left and push it into the guessed array. 
         else {
             guessesLeft--;
             prevGuess.push(userGuess);
+            document.getElementById("displayWins").innerHTML = wins
+            document.getElementById("displayLosses").innerHTML = losses
+            document.getElementById("displayGuess").innerHTML = guessesLeft
             document.getElementById("displayPrevGuess").innerHTML = prevGuess.join(", ")
         }
     }
@@ -47,6 +52,9 @@ document.onkeyup = function(event) {
     //when out of guesses, add a loss, show the correct answer, and reset the score. 
     if (guessesLeft <= 0) {
         losses++;
+        alert("sorry chief, you lost")
+        document.getElementById("displayLosses").innerHTML = losses
+        //reset
     }
 }
 
