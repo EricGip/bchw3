@@ -91,7 +91,7 @@ document.onkeyup = function(event) {
   //when out of guesses, add a loss, show the correct answer, and reset the score.
   if (guessesLeft <= 0) {
     losses++;
-    alert("sorry chief, you lost");
+    alert("sorry chief, you lost; the correct answer was " + cpuChoice);
     document.getElementById("displayLosses").innerHTML = losses;
     //reset
     resetGame()
