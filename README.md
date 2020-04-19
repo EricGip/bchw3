@@ -1,5 +1,6 @@
 # bchw3
 The Psychic Game: Guess what letter i'm thinking of. 
+Created with JavaScript and BootStrap.
 -----------
 
 ### The goal of this project was to get familiar with JavaScript and event handlers.
