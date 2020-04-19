@@ -53,13 +53,12 @@ function displayScore() {
 }
 
 function resetGame() {
-    prevGuess = [];
-    guessesLeft = 8;
-    //tried to make this a function, but it wouldn't work. we only used it twice anyway.
-    cpuChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-    //for debugging
-    console.log(cpuChoice)
-
+  prevGuess = [];
+  guessesLeft = 8;
+  //tried to make this a function, but it wouldn't work. we only used it twice anyway.
+  cpuChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+  //for debugging
+  console.log(cpuChoice);
 }
 //whenever a user presses a key,
 document.onkeyup = function(event) {
@@ -75,16 +74,16 @@ document.onkeyup = function(event) {
     if (userGuess === cpuChoice) {
       wins++;
       alert("nice, you guessed correctly!");
-      displayScore()
+      displayScore();
       //reset
-      resetGame()
-      alert("press any key to restart the game...")
+      resetGame();
+      alert("press any key to restart the game...");
     }
     //else, subtract guesses left and push it into the guessed array.
     else {
       guessesLeft--;
       prevGuess.push(userGuess);
-      displayScore()
+      displayScore();
     }
   }
 
@@ -94,7 +93,7 @@ document.onkeyup = function(event) {
     alert("sorry chief, you lost; the correct answer was " + cpuChoice);
     document.getElementById("displayLosses").innerHTML = losses;
     //reset
-    resetGame()
-    alert("press any key to restart the game...")
+    resetGame();
+    alert("press any key to restart the game...");
   }
 };
